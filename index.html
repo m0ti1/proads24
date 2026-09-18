@@ -506,8 +506,9 @@
     <div class="footer-docs">
       <h3>Документы</h3>
       <ul>
-        <li><a href="#" data-doc="policy">Политика конфиденциальности</a></li>
-        <li><a href="#" data-doc="consent">Согласие на обработку персональных данных</a></li>
+        <li><a href="personal-data/">Политика обработки персональных данных</a></li>
+        <li><a href="personal-data/consent.html">Согласие на обработку персональных данных</a></li>
+        <li><a href="personal-data/request.html">Управление персональными данными</a></li>
       </ul>
     </div>
   </div>
@@ -529,6 +530,7 @@
     </button>
   </div>
   <form id="lead-form" novalidate>
+    <input type="hidden" name="consent_version" value="consent-1.0_2026-09-18">
     <div class="form-grid">
       <div class="field">
         <label for="f-name">Имя <em>*</em></label>
@@ -577,30 +579,18 @@
     <div class="field field-consent">
       <label class="consent">
         <input id="f-consent" name="consent" type="checkbox" required>
-        <span>Согласен(а) на <a href="#" data-doc="consent">обработку персональных данных</a></span>
+        <span>Даю <a href="personal-data/consent.html" target="_blank" rel="noopener">согласие на обработку персональных данных</a></span>
       </label>
       <p class="field-error" id="f-consent-err" hidden>Без согласия мы не сможем принять заявку</p>
     </div>
     <button class="btn btn-primary btn-lg btn-submit" type="submit"><span>Отправить заявку</span></button>
-    <p class="form-privacy">Нажимая «Отправить заявку», вы соглашаетесь на обработку персональных данных.</p>
+    <p class="form-privacy">Подробнее о порядке обработки — в <a href="personal-data/" target="_blank" rel="noopener">Политике персональных данных</a>.</p>
   </form>
   <div class="form-success" id="form-success" hidden>
     <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M53.2 27.3 A22 22 0 0 1 26.3 54.3" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><path d="M10.8 38.7 A22 22 0 0 1 37.7 11.7" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><path d="M20 33 L28 42 L46 22" fill="none" stroke="#3ac85a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
     <h3>Заявка принята</h3>
     <p>Ответим в рабочее время в течение пары часов. Пока можно написать нам напрямую: <a href="mailto:hello@proads24.ru">hello@proads24.ru</a></p>
     <button class="btn btn-ghost" type="button" data-close-modal>Хорошо</button>
-  </div>
-</dialog>
-
-<dialog class="modal modal-doc" id="doc-dialog" aria-labelledby="doc-dialog-title">
-  <div class="modal-head">
-    <div><h2 id="doc-dialog-title">Документ</h2></div>
-    <button class="modal-close" type="button" data-close-modal aria-label="Закрыть окно">
-      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5 L15 15 M15 5 L5 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
-  </div>
-  <div class="doc-body">
-    <p id="doc-text">Документ готовится юристом. Чтобы получить его раньше публикации, напишите на <a href="mailto:hello@proads24.ru">hello@proads24.ru</a>.</p>
   </div>
 </dialog>
 

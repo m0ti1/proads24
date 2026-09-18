@@ -92,7 +92,6 @@
 
   /* ---------- Модалка заявки ---------- */
   var leadModal = $("#lead-modal");
-  var docDialog = $("#doc-dialog");
   var leadForm = $("#lead-form");
   var successBox = $("#form-success");
   var topicSelect = $("#f-topic");
@@ -138,20 +137,10 @@
       closeModal(closer.closest("dialog"));
       return;
     }
-    var doc = e.target.closest("[data-doc]");
-    if (doc) {
-      e.preventDefault();
-      var titles = {
-        policy: "Политика конфиденциальности",
-        consent: "Согласие на обработку персональных данных"
-      };
-      $("#doc-dialog-title").textContent = titles[doc.getAttribute("data-doc")] || "Документ";
-      docDialog.showModal();
-    }
   });
 
   // Клик по подложке закрывает окно
-  [leadModal, docDialog].forEach(function (dialog) {
+  [leadModal].forEach(function (dialog) {
     dialog.addEventListener("click", function (e) {
       if (e.target === dialog) closeModal(dialog);
     });
@@ -220,6 +209,7 @@
         topic: topicSelect.value,
         budget: $("#f-budget").value,
         comment: $("#f-comment").value.trim(),
+        consentVersion: leadForm.elements.consent_version.value,
         sentAt: new Date().toISOString()
       }));
     } catch (err) { /* приватный режим — просто пропускаем */ }
